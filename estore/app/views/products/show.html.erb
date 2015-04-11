@@ -1,0 +1,55 @@
+ <div class="star-rating" data-score= <%= @avg_value %> ></div>
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @product.title %>
+</p>
+
+
+
+<p>
+  <b>Photo:</b>
+<%= image_tag(@product.photo, :size => '100x100') %>
+</p>
+
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+
+
+ <%= link_to "Write a Review", new_review_path %>
+</div>
+</div>
+<div class="col-md-7 col-md-offset-1">
+<h1 class="review_name"><%= @product.title %></h1>
+<p><%= @product.category %></p>
+
+<% if @product.reviews.empty? %>
+
+<h3>No reviews just yet, would you like to add the first!</h3>
+<%= link_to "Write Review", new_review_path, class: "btn btn-danger" %>
+<% else %>
+  <% @product.reviews.reverse.each do |review| %>
+
+ 
+
+</div>
+<% end %>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+ <% if admin? %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
+<%= link_to 'Back', products_path %>
+
+
+

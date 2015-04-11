@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estore</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="columns">
+    <div id="side">
+      <div id="cart">
+	  <% if @cart %>
+        		<%= render @cart %>
+	<% end %>
+      </div>      
+    </div>
+    <div id="main">
+     
+    </div>
+  </div>
+
+</html>
+
+<div id="banner">
+	<%= image_tag("estore_logo.jpg", :size => "500x200") %>
+	<%= @page_title || "The Electronic Store" %>
+</div>
+<h1>Welcome </h1>
+<% if !signed_in? %>
+
+<p> New user? <%= link_to "Sign up now!", new_user_path %></p>
+<%end%>
+<ul>
+	<% if !signed_in? %>
+		<li><%= link_to "Sign In", signin_path %></li>		
+	<% else %>
+		<li>Signed in as <%= @current_user.name %></li>
+		<li><%= link_to "Sign Out", signout_path %></li>
+
+<%end %>
+
+<div id="nav">
+    <ul>
+<li><%= link_to "Check out Products", products_path%></li>
+
+           
+     	
+	  
+	   <li><%= link_to "Find us on Facebook", 'https://www.facebook.com'%></li>
+   
+	
+
+	 </ul>
+	 
+	
+	</div>
+<%= yield %>
+
+
+</body>
+</html>

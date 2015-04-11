@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyText
+  userid: 1
+  product_id: 1
+  datesent: 2015-04-11
+  value: 1
+
+two:
+  content: MyText
+  userid: 1
+  product_id: 1
+  datesent: 2015-04-11
+  value: 1
